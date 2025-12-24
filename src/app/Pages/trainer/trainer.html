@@ -1,0 +1,51 @@
+ <div class="page">
+  
+    <!-- Trainer Form -->
+    <div class="card">
+        <h2>Add Trainer</h2>
+
+        <div class="form-group">
+            <label> <strong>Trainer Name :</strong></label>
+            <select name="" id="" [(ngModel)]="name">
+                <option value="Pratiksha k">Pratiksha k</option>
+                <option value="S k">S k</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label> <strong>Speciality :</strong> </label>
+            <select name="" id="" [(ngModel)]="speciality">
+                <option value="Gym">Gym</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Cardio">Cardio</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label>Experience (Years) : </label>
+            <input type="number" [(ngModel)]="experience" placeholder="e.g. 5" />
+        </div>
+
+        <button (click)="addTrainer()">Add Trainer</button>
+    </div>
+
+    <!-- Trainer List -->
+    <div class="list-card">
+        <h3>Trainers</h3>
+
+        <div class="trainer" *ngFor="let t of trainers()">
+            <div class="avatar">{{ t.name[0] }}</div>
+
+            <div class="info">
+                <div class="name">
+                    <p>Tranier Name: {{ t.name }} </p>
+                </div>
+                <div class="details">
+                    <p> Speciality : {{ t.speciality }} </p>
+                    <p>Exp Of Year: {{ t.experience }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

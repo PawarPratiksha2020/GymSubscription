@@ -1,0 +1,59 @@
+<div class="page">
+  <!-- Subscription Form -->
+  <div class="card">
+    <h2>Create Subscription</h2>
+
+    <div class="form-group">
+      <label>User Name</label>
+      <input type="text" [(ngModel)]="userName" placeholder="Enter user name" />
+    </div>
+
+    <div class="form-group">
+      <label>Plan</label>
+      <select [(ngModel)]="plan">
+        <option value="1Month">1 Month</option>
+        <option value="3Month">3 Month</option>
+        <option value="6Month">6 Month</option>
+        <option value="Yearly">Yearly</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Price (₹)</label>
+      <select name="" id="" [(ngModel)]="price">
+        <option value="">Select Option</option>
+        <option value="1 Month(500)">1 Month(500)</option>
+        <option value="3 Month(3500)">3 Month(3500)</option>
+        <option value="6 Month(5000)">6 Month(5000)</option>
+        <option value="Yearly(10000)">Yearly(10000)</option>
+      </select>
+     
+    </div>
+
+    <div class="form-group">
+      <label>Start Date</label>
+      <input type="date" [(ngModel)]="startDate" />
+    </div>
+
+    <button (click)="addSubscription()">Add Subscription</button>
+  </div>
+
+  <!-- Subscription List -->
+  <div class="list-card">
+    <h3>Subscriptions</h3>
+
+    <div class="sub" *ngFor="let s of subscriptions()">
+      <div class="badge">{{ s.plan }}</div>
+
+      <div class="info">
+        <div class="name">
+            <p>Name : {{ s.userName }}</p></div>
+        <div class="details">
+            <p>Price: ₹{{ s.price }}</p>
+            <p>StartDate : {{ s.startDate }} </p>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

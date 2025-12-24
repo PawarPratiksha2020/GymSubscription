@@ -1,0 +1,32 @@
+.nav-item{
+    padding: 5px;
+    /* color: aliceblue; */
+}
+.test{
+    color: antiquewhite;
+}
+/* .page{
+  min-height: 100vh;
+  background-image: url('/assest/fitlogo.jpg');
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+  padding: 5px ;
+  background: rgba(191, 40, 40, 0.6);
+}
+
+.logo {
+  width: 30px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.header h1 {
+  color: white;
+  font-size: 25px;
+  margin: 0;
+} */
