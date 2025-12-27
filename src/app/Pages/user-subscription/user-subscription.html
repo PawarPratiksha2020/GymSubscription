@@ -1,59 +1,162 @@
-<div class="page">
-  <!-- Subscription Form -->
-  <div class="card">
-    <h2>Create Subscription</h2>
+<div class="subscription-page">
+
+  <h2 class="title"><i class="fa-notdog-duo fa-solid fa-user"></i> Gym Subscription Plans</h2>
+
+  <div class="plans">
+
+    <!-- BASIC PLAN -->
+    <div class="plan-card basic">
+      <h3>Basic Plan</h3>
+      <p class="price">₹799 / Month</p>
+
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Gym Access</li>
+        <li><i class="fa-solid fa-check"></i> Cardio Section</li>
+        <li><i class="fa-solid fa-skull-crossbones"></i> Personal Trainer</li>
+        <li><i class="fa-solid fa-skull-crossbones"></i> Diet Plan</li>
+      </ul>
+
+      <button (click)="selectPlan('Basic',799)">Subscribe</button>
+    </div>
+
+    <!-- STANDARD PLAN -->
+    <div class="plan-card standard">
+      <h3>Standard Plan</h3>
+      <p class="price">₹1499 / Month</p>
+
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Gym + Cardio + Steam</li>
+        <li><i class="fa-solid fa-check"></i> Group Classes</li>
+        <li><i class="fa-solid fa-check"></i> Diet Guidance</li>
+        <li><i class="fa-solid fa-skull-crossbones"></i>Personal Trainer</li>
+      </ul>
+
+      <button (click)="selectPlan('Standard',1499)">Subscribe</button>
+    </div>
+
+    <!-- PREMIUM PLAN -->
+    <div class="plan-card premium">
+      <h3>Premium Plan</h3>
+      <p class="price">₹2499 / Month</p>
+
+      <ul>
+        <li>
+         <i class="fa-solid fa-check"></i>  All Gym Facilities</li>
+        <li>
+         <i class="fa-solid fa-check"></i>  Personal Trainer</li>
+        <li>
+         <i class="fa-solid fa-check"></i>  Custom Diet Plan</li>
+        <li>
+         <i class="fa-solid fa-check"></i>  Body Transformation</li>
+      </ul>
+
+      <button (click)="selectPlan('Premium',2499)">Subscribe</button>
+    </div>
+
+  </div>
+
+
+  <!-- USER SUBSCRIPTION FORM -->
+  <div class="subscribe-form">
+    <h3><i class="fa-solid fa-clipboard-list"></i> Complete Subscription</h3>
 
     <div class="form-group">
       <label>User Name</label>
-      <input type="text" [(ngModel)]="userName" placeholder="Enter user name" />
+      <input type="text" [(ngModel)]="userName" placeholder="Enter name">
     </div>
 
     <div class="form-group">
-      <label>Plan</label>
-      <select [(ngModel)]="plan">
-        <option value="1Month">1 Month</option>
-        <option value="3Month">3 Month</option>
-        <option value="6Month">6 Month</option>
-        <option value="Yearly">Yearly</option>
-      </select>
+      <label>Selected Plan</label>
+      <input type="text" [(ngModel)]="plan" readonly>
     </div>
 
     <div class="form-group">
-      <label>Price (₹)</label>
-      <select name="" id="" [(ngModel)]="price">
-        <option value="">Select Option</option>
-        <option value="1 Month(500)">1 Month(500)</option>
-        <option value="3 Month(3500)">3 Month(3500)</option>
-        <option value="6 Month(5000)">6 Month(5000)</option>
-        <option value="Yearly(10000)">Yearly(10000)</option>
-      </select>
-     
+      <label>Price</label>
+      <input type="text" [(ngModel)]="price" readonly>
     </div>
 
     <div class="form-group">
       <label>Start Date</label>
-      <input type="date" [(ngModel)]="startDate" />
+      <input type="date" [(ngModel)]="startDate">
     </div>
 
-    <button (click)="addSubscription()">Add Subscription</button>
+    <button class="submit-btn" (click)="addSubscription()">Confirm Subscription</button>
   </div>
 
-  <!-- Subscription List -->
+
+  <!-- SUBSCRIPTION LIST -->
   <div class="list-card">
-    <h3>Subscriptions</h3>
+    <h3> <i class="fa-notdog-duo fa-solid fa-user"></i> Active Subscriptions</h3>
 
     <div class="sub" *ngFor="let s of subscriptions()">
       <div class="badge">{{ s.plan }}</div>
 
       <div class="info">
-        <div class="name">
-            <p>Name : {{ s.userName }}</p></div>
-        <div class="details">
-            <p>Price: ₹{{ s.price }}</p>
-            <p>StartDate : {{ s.startDate }} </p>
-           
-        </div>
+        <p><b>{{ s.userName }}</b></p>
+        <p>{{s.plan}}</p>
+        <p>₹ {{ s.price }}</p>
+        <p>Start: {{ s.startDate }}</p>
       </div>
     </div>
   </div>
+
+</div>
+<div class="info-section">
+
+  <h2> Why Join Our Gym?</h2>
+
+  <p>
+    At Anytime Fitness, we focus on strength, discipline and lifestyle transformation.
+    Our programs help members stay motivated and consistent throughout their journey.
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-card">
+      <h3><i class="fa-notdog-duo fa-solid fa-user"></i> Strength Training</h3>
+      <p>Build muscle, improve stamina and boost confidence.</p>
+    </div>
+
+    <div class="info-card">
+      <h3> Fat Loss Program</h3>
+      <p>Customized diet + cardio + trainer guidance.</p>
+    </div>
+
+    <div class="info-card">
+      <h3><i class="fa-solid fa-user"></i> Yoga & Flexibility</h3>
+      <p>Improve posture, balance and mental peace.</p>
+    </div>
+
+    <div class="info-card">
+      <h3> Transformation Results</h3>
+      <p>Monthly progress tracking & body analysis.</p>
+    </div>
+
+  </div>
+  <!-- <div class="offer-box">
+     <b>LIMITED TIME OFFER</b> — Join Today & Get
+    <span>20% OFF on Annual Subscription!</span>
+    <button>Grab Offer</button>
+  </div> -->
+<footer class="gym-footer">
+
+  <div class="contact-box">
+    <h3><i class="fa-solid fa-phone"></i> Contact Us</h3>
+    <p><i class="fa-solid fa-user"></i> Anytime Fitness Gym</p>
+    <p><i class="fa-solid fa-location-arrow"></i> Pune, Maharashtra</p>
+    <p><i class="fa-solid fa-message"></i>support@anytimefitness.in</p>
+    <p><i class="fa-solid fa-mobile"></i> +91 98765 43210</p>
+  </div>
+
+  <div class="social">
+    <h4>Follow Us</h4>
+    <p> Instagram •  Facebook •  YouTube</p>
+  </div>
+
+  <p class="copy">© 2025 Anytime Fitness — Stay Fit, Stay Strong </p>
+
+</footer>
+
+
+
 </div>

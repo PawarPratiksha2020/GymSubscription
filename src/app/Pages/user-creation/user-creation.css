@@ -1,91 +1,88 @@
 .page {
-  display: flex;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
   padding: 30px;
-  background: #f0f2f5;
-  min-height: 100vh;
 }
 
-.card, .list-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 350px;
+/* LEFT SECTION */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-h2, h3 {
-  margin-bottom: 20px;
+.card, .list-card, .info-box {
+  background: rgba(255,255,255,.85);
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  backdrop-filter: blur(8px);
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  font-size: 14px;
-  color: #555;
-}
+.form-group { margin-bottom: 10px; }
 
 input {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-top: 5px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #777;
 }
 
 button {
   width: 100%;
-  padding: 12px;
-  border: none;
-  background: #25d366;
-  color: white;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #1da851;
-}
-
-.user {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   padding: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
   background: #128c7e;
   color: white;
-  border-radius: 50%;
+  border-radius: 6px;
+  border: none;
+}
+button:hover { background:#0f6e63; }
+
+/* RIGHT SIDE INFO PANEL */
+.right {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  text-transform: uppercase;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.name {
-  font-weight: 600;
+.info-box h2 {
+  margin-bottom: 10px;
 }
 
-.details {
-  font-size: 13px;
-  color: gray;
+.info-box ul {
+  padding-left: 15px;
 }
-.gender-row {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  
+
+.quote {
+  margin-top: 10px;
+  font-style: italic;
+  color: #444;
 }
- .gender-row text{
-    display: flex;
-    justify-content: center;
- }
+
+/* IMAGE BOX */
+.gym-image {
+  height: 260px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* First Image */
+.gym-image {
+  background-image: url('C:/Angular-20(intership)/Gym-Sub-Management/src/assets/image/pexels-willpicturethis-1954524.jpg');
+}
+
+/* Second Image */
+.second-image {
+  margin-top: 10px;
+  background-image: url('C:/Angular-20(intership)/Gym-Sub-Management/src/assets/image/gb-botanica-gym-link-spaces-slough-1536x1024.jpg'); /* <-- दुसरी image */
+}
+
+/* MOBILE VIEW */
+@media(max-width: 900px){
+  .page {
+    grid-template-columns: 1fr;
+  }
+}

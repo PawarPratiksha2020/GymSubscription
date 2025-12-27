@@ -1,0 +1,118 @@
+/* ---------- BASE --------- */
+body{
+  margin:0;
+  font-family:sans-serif;
+}
+
+/* ---------- THEME MODES --------- */
+
+/* DARK Mode */
+body.dark-theme{
+  background:#000000 !important;
+  color:#ffffff !important;
+}
+
+/* LIGHT Mode */
+body.light-theme{
+  background:#ffffff !important;
+  color:#000000 !important;
+}
+
+/* Common blocks */
+.dashboard,
+.info-section,
+.chart-box,
+.card{
+  transition:.3s;
+}
+
+/* ---------- HERO BANNER ---------- */
+.hero-banner{
+  height:45vh;
+  background-image:url("C:/Angular-20(intership)/Gym-Sub-Management/src/assets/image/gb-botanica-gym-link-spaces-slough-1536x1024.jpg");
+  background-size:cover;
+  background-position:center;
+  border-radius:16px;
+  margin:15px;
+  position:relative;
+  box-shadow:0 12px 30px rgba(0,0,0,.5);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,#000000aa,#00000055);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-left:40px;
+  color:#fff;
+}
+
+/* ---------- INFO SECTION ---------- */
+.info-section{
+  margin:18px;
+  padding:18px;
+  border-radius:14px;
+  background:#1b1b1b;
+  color:#fff;
+}
+
+body.light-theme .info-section{
+  background:#ffffff;
+  color:#111;
+}
+
+/* ---------- DASHBOARD ---------- */
+.dashboard{
+  padding:20px;
+}
+
+/* TOP BAR */
+.top-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* THEME BTN */
+.theme-btn{
+  padding:8px 16px;
+  border-radius:20px;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* ---------- STAT CARDS ---------- */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  margin:20px 0;
+}
+
+.card{
+  padding:16px;
+  border-radius:14px;
+  font-size:18px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 10px 25px rgba(0,0,0,.5);
+}
+
+.c1{ background:linear-gradient(135deg,#6a11cb,#2575fc); }
+.c2{ background:linear-gradient(135deg,#ff512f,#dd2476); }
+.c3{ background:linear-gradient(135deg,#11998e,#38ef7d); }
+
+/* ---------- CHART BOX ---------- */
+.chart-box{
+  background:#1b1b1b;
+  padding:14px;
+  border-radius:14px;
+}
+
+body.light-theme .chart-box{
+  background:#ffffff;
+  color:#a4b51e;
+}

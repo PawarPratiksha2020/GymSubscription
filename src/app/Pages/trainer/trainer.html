@@ -1,51 +1,96 @@
- <div class="page">
-  
-    <!-- Trainer Form -->
-    <div class="card">
-        <h2>Add Trainer</h2>
+<!-- 🔹 DYNAMIC MOVEMENT TRAINING SECTION -->
+<div class="dmt-hero">
+  <h2>DYNAMIC MOVEMENT TRAINING (DMT)</h2>
+</div>
+  <!-- 🔹 CORE FEATURES SECTION -->
+<!-- <div class="features-section">
 
-        <div class="form-group">
-            <label> <strong>Trainer Name :</strong></label>
-            <select name="" id="" [(ngModel)]="name">
-                <option value="Pratiksha k">Pratiksha k</option>
-                <option value="S k">S k</option>
-            </select>
-        </div>
+  <h2>Core Features Include</h2>
 
-        <div class="form-group">
-            <label> <strong>Speciality :</strong> </label>
-            <select name="" id="" [(ngModel)]="speciality">
-                <option value="Gym">Gym</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Cardio">Cardio</option>
-            </select>
+  <ul>
+    <li>✔ Member registration and ID generation</li>
+    <li>✔ Plan & package management (monthly, quarterly, yearly)</li>
+    <li>✔ Attendance tracking with biometric / RFID</li>
+    <li>✔ Auto-renewal alerts & SMS / WhatsApp notifications</li>
+    <li>✔ Trainer assignment & performance tracking</li>
+    <li>✔ Payment tracking with invoices & receipts</li>
+    <li>✔ Diet & workout plan assignment</li>
+    <li>✔ Inventory tracking for supplements/products</li>
+    <li>✔ Locker assignment & equipment status</li>
+    <li>✔ Real-time reports & analytics</li>
+    <li>✔ Web dashboard + Android / iOS mobile app</li>
+  </ul>
 
-        </div>
+</div> -->
 
-        <div class="form-group">
-            <label>Experience (Years) : </label>
-            <input type="number" [(ngModel)]="experience" placeholder="e.g. 5" />
-        </div>
 
-        <button (click)="addTrainer()">Add Trainer</button>
+<div class="trainer-page">
+
+  <h2> Gym Trainers</h2>
+
+  <!-- Trainer Cards -->
+  <div class="card-list">
+    <div class="trainer-card"
+         *ngFor="let t of trainers()"
+         (click)="selectTrainer(t)"
+         [class.active]="selectedTrainer === t">
+
+      <div class="avatar">{{ t.name[0] }}</div>
+
+      <h3>{{ t.name }}</h3>
+      <p>{{ t.speciality }}</p>
+
+      <div class="tags">
+        <span> {{ t.experience }} yrs</span>
+        <span> Age {{ t.age }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected Trainer -->
+  <div class="selected-box" *ngIf="selectedTrainer">
+    <h3> Selected Trainer</h3>
+    <p><b>Name:</b> {{ selectedTrainer.name }}</p>
+    <p><b>Speciality:</b> {{ selectedTrainer.speciality }}</p>
+    <p><b>Experience:</b> {{ selectedTrainer.experience }} years</p>
+    <p><b>Age:</b> {{ selectedTrainer.age }}</p>
+  </div>
+
+
+  <!--  GYM INFORMATION SECTION -->
+  <div class="info-section">
+    <h2> About Our Gym</h2>
+
+    <p>
+      Anytime Fitness is dedicated to building strength, confidence,
+      and a healthy lifestyle for every member. Our trainers motivate you
+      with discipline, proper workout techniques and goal-based programs.
+    </p>
+
+    <div class="info-grid">
+      <div class="info-box"> Strength & Conditioning</div>
+      <div class="info-box"> Fat Loss Programs</div>
+      <div class="info-box"> Yoga & Flexibility</div>
+      <div class="info-box"> Diet & Nutrition Guidance</div>
+    </div>
+  </div>
+
+
+  <!--  FOOTER SECTION -->
+  <footer class="gym-footer">
+
+    <p class="footer-title"> Anytime Fitness • Pune, Maharashtra</p>
+
+    <div class="social-icons">
+      <span title="Instagram"><i class="fa-brands fa-square-instagram"></i></span>
+      <span title="Facebook"><i class="fa-brands fa-facebook"></i></span>
+      <span title="YouTube"><i class="fa-brands fa-youtube"></i></span>
+      <span title="Twitter"><i class="fa-brands fa-twitter"></i></span>
     </div>
 
-    <!-- Trainer List -->
-    <div class="list-card">
-        <h3>Trainers</h3>
+    <p class="copy">
+      © 2025 Anytime Fitness — Stay Fit, Stay Strong 
+    </p>
+  </footer>
 
-        <div class="trainer" *ngFor="let t of trainers()">
-            <div class="avatar">{{ t.name[0] }}</div>
-
-            <div class="info">
-                <div class="name">
-                    <p>Tranier Name: {{ t.name }} </p>
-                </div>
-                <div class="details">
-                    <p> Speciality : {{ t.speciality }} </p>
-                    <p>Exp Of Year: {{ t.experience }}</p>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

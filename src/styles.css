@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+/* 🌞 Light Theme */
+body[data-theme='light'] {
+  --bg-color: #f4f6f9;
+  --card-bg: #ffffff;
+  --text-color: #222;
+}
+
+/* 🌙 Dark Theme */
+body[data-theme='dark'] {
+  --bg-color: #141e30;
+  --card-bg: #1f2a40;
+  --text-color: #ffffff;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}

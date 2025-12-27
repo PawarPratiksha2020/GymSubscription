@@ -1,90 +1,149 @@
-.backpage{
-  min-height: 100vh;
-  background-image:'url(assets/Image/photo-1534438327276-14e5300c3a48.jpg)';
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.dmt-hero{
+  height: 50vh;                     /* ⬅ half page */
+  background-image: url('C:/Angular-20(intership)/Gym-Sub-Management/src/assets/image/gb-botanica-gym-link-spaces-slough-1536x1024.jpg');
+  background-size: cover;            /* full fit */
+  background-position: center;       /* proper alignment */
+  background-repeat: no-repeat;      /* stop repeating */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+h2{
+  color: #d1511a;
+  font-style: italic;
 }
 
 
-.page {
-  display: flex;
-  gap: 30px;
-  padding: 30px;
-  background: #f0f2f5;
-  min-height: 100vh;
+.dmt-card p{
+  margin-top:8px;
+  line-height:1.4;
+}
+.features-section{
+  margin-top:25px;
+  background:#e7d7d7;
+  padding:18px;
+  border-radius:14px;
+  color:#0c0c0c;
 }
 
-.card, .list-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 360px;
+.features-section ul{
+  padding-left:18px;
+  line-height:1.6;
 }
 
-h2, h3 {
-  margin-bottom: 20px;
+
+.trainer-page{
+  padding:20px;
+  background:#0f0f0f;
+  color:#fff;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.card-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  margin-top:15px;
 }
 
-label {
-  font-size: 14px;
-  color: #555;
+.trainer-card{
+  background:#1f1f1f;
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
+  cursor:pointer;
+  transition:.3s;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-top: 5px;
+.trainer-card:hover{
+  transform:scale(1.04);
+  box-shadow:0 0 18px #cee4e2;
 }
 
-button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  background: #ff9800;
-  color: white;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
+.trainer-card.active{
+  border:2px solid #00ffc8;
+  box-shadow:0 0 25px #00ffe6;
 }
 
-button:hover {
-  background: #e68900;
+.avatar{
+  width:55px;
+  height:55px;
+  background:#00ffc8;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
 }
 
-.trainer {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  border-bottom: 1px solid #eee;
+.tags span{
+  background:#00000066;
+  padding:4px 8px;
+  border-radius:10px;
+  margin:3px;
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-  background: #673ab7;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  text-transform: uppercase;
+.selected-box{
+  margin-top:15px;
+  background:#1c1c1c;
+  padding:12px;
+  border-radius:10px;
+}
+/* Gym Information */
+.info-section{
+  margin-top:20px;
+  background:#1c1c1c;
+  padding:16px;
+  border-radius:14px;
 }
 
-.name {
-  font-weight: 600;
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:10px;
 }
 
-.details {
-  font-size: 13px;
-  color: gray;
+.info-box{
+  background:#c1dc5f;
+  padding:10px;
+  border-radius:10px;
+  text-align:center;
 }
+
+/* Footer */
+.gym-footer{
+  margin-top:20px;
+  text-align:center;
+  background:#deb0f0;
+  padding:14px;
+  border-radius:14px;
+}
+
+.footer-title{
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+.social-icons span{
+  font-size:26px;
+  margin:0 8px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.social-icons span:hover{
+  transform:scale(1.2);
+  color:#00ffc8;
+}
+
+.copy{
+  margin-top:8px;
+  opacity:.8;
+  font-size:13px;
+}
+

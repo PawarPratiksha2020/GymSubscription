@@ -1,37 +1,26 @@
 import { Component, signal } from '@angular/core';
-import { UserTrainerServices } from '../../Model/Services/user-trainer';
-import { FormsModule } from '@angular/forms';
-import { CommonModule, NgFor, NgStyle } from '@angular/common';
-import { Highlight } from '../../Model/Directive/highlight';
+import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-trainer',
-   standalone: true,
-  imports: [FormsModule,NgFor,Highlight,NgStyle,CommonModule],
+  standalone: true,
+  imports: [CommonModule, NgFor],
   templateUrl: './trainer.html',
-  styleUrl: './trainer.css',
+  styleUrls: ['./trainer.css']
 })
 export class Trainer {
-   trainers = signal<any[]>([]);
 
-  name = '';
-  speciality = '';
-  experience = '';
+  trainers = signal([
+    { name: 'Rahul Patil', speciality: 'Strength Coach', experience: 5, age: 29 },
+    { name: 'Sneha Deshmukh', speciality: 'Yoga Trainer', experience: 4, age: 26 },
+    { name: 'Amit Verma', speciality: 'Cardio Expert', experience: 6, age: 31 },
+    { name: 'Pooja Kulkarni', speciality: 'Zumba & Dance', experience: 3, age: 24 },
+    { name: 'Rohan Mehta', speciality: 'CrossFit Coach', experience: 7, age: 33 }
+  ]);
 
-  addTrainer() {
-    if (!this.name || !this.speciality) return;
+  selectedTrainer: any = null;
 
-    this.trainers.update(t => [
-      ...t,
-      {
-        name: this.name,
-        speciality: this.speciality,
-        experience: this.experience
-      }
-    ]);
-
-    this.name = '';
-    this.speciality = '';
-    this.experience = '';
+  selectTrainer(t:any){
+    this.selectedTrainer = t;
   }
 }

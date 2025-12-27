@@ -1,63 +1,86 @@
 <div class="page">
+
+  <!-- LEFT SIDE : FORM + GRID -->
+  <div class="left">
+
     <div class="card">
-        <h2>Create User</h2>
+      <h2>Create User</h2>
 
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" [(ngModel)]="name" placeholder="Enter name" />
-        </div>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" [(ngModel)]="name" placeholder="Enter name" />
+      </div>
 
-        <div class="form-group">
-            <label>Age</label>
-            <input type="number" [(ngModel)]="age" placeholder="Enter age" />
-        </div>
-        <div class="from-group">
-            <label for="">CurrentWeight</label>
-            <input type="number" [(ngModel)]="currentWeight" placeholder="CurrentWright">
-        </div>
-        <div class="form-group">
-            <div class="gender-row">
-                <span>Gender :</span>
+      <div class="form-group">
+        <label>Age</label>
+        <input type="number" [(ngModel)]="age" placeholder="Enter age" />
+      </div>
 
-                <label>
-                    <input type="radio" name="gender" value="Male" [(ngModel)]="gender">
-                    Male
-                </label>
+      <div class="form-group">
+        <label>Current Weight</label>
+        <input type="number" [(ngModel)]="currentWeight" placeholder="Enter weight" />
+      </div>
 
-                <label>
-                    <input type="radio" name="gender" value="Female" [(ngModel)]="gender">
-                    Female
-                </label>
-            </div>
-        </div>
+      <div class="form-group gender-row">
+        <span>Gender :</span>
 
+        <label>
+          <input type="radio" name="gender" value="Male" [(ngModel)]="gender" /> Male
+        </label>
 
-        <div class="form-group">
-            <label>Phone</label>
-            <input type="text" [(ngModel)]="phone" placeholder="Enter phone" />
-        </div>
+        <label>
+          <input type="radio" name="gender" value="Female" [(ngModel)]="gender" /> Female
+        </label>
+      </div>
 
-        <button (click)="addUser()">Add User</button>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" [(ngModel)]="phone" placeholder="Enter phone" />
+      </div>
+
+      <button (click)="addUser()">Add User</button>
     </div>
 
+    <!-- GRID -->
     <div class="list-card">
-        <h3>Users List</h3>
+      <h3>Users List</h3>
 
-        <div class="user" *ngFor="let u of users()">
-            <div class="avatar">
-                <p><strong>{{u.name[0] }}</strong> </p>
-            </div>
-            <div class="info">
-                <div class="name">
-                    <p>Name : {{ u.name }}</p>
-                </div>
-                <div class="details">
-                    <p>Age : {{ u.age }} </p>
-                    <p>CurrentWeight : {{u.currentWeight}}</p>
-                    <p>Gender : {{u.gender}}</p>
-                    <p>Phone :📞 {{ u.phone }} </p>
-                </div>
-            </div>
-        </div>
+      <ag-grid-angular
+        class="ag-theme-alpine"
+        style="width: 100%; height: 350px;"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs">
+      </ag-grid-angular>
     </div>
+  </div>
+
+
+  <!-- RIGHT SIDE : GYM INFO -->
+  <div class="right">
+
+    <div class="info-box">
+      <h2> FITNESS MOTIVATION</h2>
+
+      <p>
+        Welcome to <b>Anytime Fitness Gym</b> — where discipline meets strength.
+        We believe fitness is not just a workout, it's a lifestyle.
+      </p>
+
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Modern Equipment & Trainers</li>
+        <li><i class="fa-solid fa-check"></i> Personalised Workout Plans</li>
+        <li><i class="fa-solid fa-check"></i> Weight Gain / Loss Programs</li>
+        <li><i class="fa-solid fa-check"></i> Strength & Cardio Sections</li>
+      </ul>
+
+      <p class="quote">
+        “Your body can stand almost anything — it's your mind you have to convince.”
+      </p>
+    </div>
+
+    <div class="gym-image"></div>
+     <div class="gym-image second-image"></div>
+
+  </div>
+
 </div>

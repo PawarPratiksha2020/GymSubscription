@@ -6,11 +6,12 @@ import { UserSubscription } from './Pages/user-subscription/user-subscription';
 import { Trainer } from './Pages/trainer/trainer';
 import { NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Highlight } from './Model/Directive/highlight';
 
 @Component({
   selector: 'app-root',
   standalone : true,
-  imports: [RouterOutlet,RouterLink,Dashboard,UserCreation,UserSubscription,Trainer],
+  imports: [RouterOutlet,RouterLink,Dashboard,UserCreation,UserSubscription,Trainer,Highlight],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

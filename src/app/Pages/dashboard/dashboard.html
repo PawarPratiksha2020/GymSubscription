@@ -1,5 +1,58 @@
-<div class="dashboard-page">
-  <h2>Dashboard</h2>
+<!-- HERO BANNER -->
+<div class="hero-banner">
+  <div class="overlay">
+    <h1>Transform Your Fitness Journey</h1>
+    <p>Choose the right gym subscription plan that fits your goals & lifestyle</p>
+  </div>
+</div>
 
-  <!-- charts / cards इथे -->
+<!-- INFO SECTION -->
+<div class="info-section">
+
+  <h2>Gym Subscriptions Overview</h2>
+
+  <p class="desc">
+    Gym subscriptions offer various plans (monthly, annual, buddy, unlimited) with different
+    access levels such as single gym or multi-city network...
+  </p>
+
+  <h3>Common Subscription Types</h3>
+  <ul>
+    <li>Basic / Single Club Access</li>
+    <li>Multi-Club / Network Access</li>
+    <li>Buddy Packs</li>
+    <li>Premium / All-Inclusive</li>
+  </ul>
+
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard">
+
+  <div class="top-bar">
+    <h2>Gym Dashboard</h2>
+
+    <button class="theme-btn" (click)="toggleTheme()">
+      {{ isDark ? '🌞 Light' : '🌙 Dark' }}
+    </button>
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="cards">
+    <div class="card c1">Members <b>{{ users }}</b></div>
+    <div class="card c2">Trainers <b>{{ trainers }}</b></div>
+    <div class="card c3">Subscriptions <b>{{ subs }}</b></div>
+  </div>
+
+  <!-- CHART -->
+  <div class="chart-box">
+    <h3>Revenue Analytics</h3>
+
+    <highcharts-chart
+      [Highcharts]="Highcharts"
+      [options]="chartOptions"
+      style="width:100%; height:320px; display:block;">
+    </highcharts-chart>
+  </div>
+
 </div>

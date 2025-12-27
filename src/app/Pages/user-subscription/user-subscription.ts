@@ -13,29 +13,33 @@ import { DurationPipePipe } from "../../Model/Pipe/duration-pipe-pipe";
   styleUrl: './user-subscription.css',
 })
 export class UserSubscription {
- subscriptions = signal<any[]>([]);
+ plan = '';
+price = '';
+userName = '';
+startDate = '';
+subscriptions = signal<any[]>([]);
 
-  userName = '';
-  plan = 'Monthly';
-  price = ' ';
-  startDate = '';
+selectPlan(plan: string, amount: number){
+  this.plan = plan;
+  this.price = amount.toString();
+}
 
-  addSubscription() {
-    if (!this.userName || !this.startDate) return;
+addSubscription(){
+  if(!this.userName || !this.plan || !this.startDate) return;
 
-    this.subscriptions.update(s => [
-      ...s,
-      {
-        userName: this.userName,
-        plan: this.plan,
-        price: this.price,
-        startDate: this.startDate
-      }
-    ]);
+  this.subscriptions.update(s => [
+    ...s,
+    { userName:this.userName, plan:this.plan, price:this.price, startDate:this.startDate }
+  ]);
 
-    this.userName = '';
-    this.plan = 'Monthly';
-    this.price = ' ';
-    this.startDate = '';
-  }
+  this.userName = '';
+  this.plan = '';
+  this.price = '';
+  this.startDate = '';
+}
+
+
+
+
+
 }
